@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="nav.Master.cs" Inherits="ecom.Pages.Site1" %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Listing</title>
+    <link href="../Content/Css/StyleSheet1.css" rel="stylesheet" />
+      <script>
+          // Accordion functionality
+          const accordions = document.querySelectorAll('.accordion');
+
+          accordions.forEach((accordion) => {
+              const items = accordion.querySelectorAll('.accordion-item');
+              const collapsible = accordion.dataset.collapsible === 'true';
+              const type = accordion.dataset.type;
+
+              items.forEach((item) => {
+                  const trigger = item.querySelector('.accordion-trigger');
+                  const content = item.querySelector('.accordion-content');
+
+                  if (trigger) {
+                      trigger.addEventListener('click', () => {
+                          if (collapsible && type === 'single') {
+                              items.forEach((otherItem) => {
+                                  if (otherItem !== item) {
+                                      otherItem.classList.remove('active');
+                                  }
+                              });
+                          }
+
+                          item.classList.toggle('active');
+                      });
+                  }
+              });
+          });
+</script>
+  </head>
+  <body>
+    <section class="w-full py-12 md:py-24">
+      <div class="container px-4 md:px-6">
+        <div class="grid md:grid-cols-[300px_1fr] gap-10">
+          <div class="bg-white rounded-lg shadow-sm dark:bg-gray-950">
+            <div class="px-6 py-4 border-b dark:border-gray-800">
+              <h2 class="text-lg font-semibold">Filters</h2>
+            </div>
+            <div class="p-6 space-y-6">
+              <div id="accordion" class="accordion" data-collapsible="true" data-type="single">
+                <div class="accordion-item" data-value="price">
+                  <button class="accordion-trigger text-base font-medium">Price</button>
+                  <div class="accordion-content">
+                    <div class="grid gap-4">
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">$100 - $500</span>
+                        <button class="btn btn-sm">Apply</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item" data-value="brand">
+                  <button class="accordion-trigger text-base font-medium">Brand</button>
+                  <div class="accordion-content">
+                    <div class="grid gap-2">
+                      <label class="flex items-center gap-2 font-normal">
+                        <input type="checkbox" id="brand-nike" />
+                        Nike
+                      </label>
+                      <label class="flex items-center gap-2 font-normal">
+                        <input type="checkbox" id="brand-adidas" />
+                        Adidas
+                      </label>
+                      <label class="flex items-center gap-2 font-normal">
+                        <input type="checkbox" id="brand-puma" />
+                        Puma
+                      </label>
+                      <label class="flex items-center gap-2 font-normal">
+                        <input type="checkbox" id="brand-reebok" />
+                        Reebok
+                      </label>
+                      <label class="flex items-center gap-2 font-normal">
+                        <input type="checkbox" id="brand-under-armour" />
+                        Under Armour
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item" data-value="category">
+                  <button class="accordion-trigger text-base font-medium">Category</button>
+                  <div class="accordion-content">
+                    <div class="grid gap-2">
+                      <label class="flex items-center gap-2 font-normal">
+                        <input type="checkbox" id="category-shoes" />
+                        Shoes
+                      </label>
+                      <label class="flex items-center gap-2 font-normal">
+                        <input type="checkbox" id="category-clothing" />
+                        Clothing
+                      </label>
+                      <label class="flex items-center gap-2 font-normal">
+                        <input type="checkbox" id="category-accessories" />
+                        Accessories
+                      </label>
+                      <label class="flex items-center gap-2 font-normal">
+                        <input type="checkbox" id="category-equipment" />
+                        Equipment
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="grid gap-8">
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div class="bg-white rounded-lg shadow-sm overflow-hidden dark:bg-gray-950">
+                <img
+                  alt="Product Image"
+                  class="w-full aspect-square object-cover"
+                  height="400"
+                  src="/placeholder.svg"
+                  width="400"
+                />
+                <div class="p-4 space-y-2">
+                  <h3 class="text-lg font-semibold">Nike Air Force 1</h3>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">Iconic Sneakers</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-lg font-semibold">$99.99</span>
+                    <button class="btn btn-sm">Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Additional product cards -->
+            </div>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <!-- Additional product cards -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

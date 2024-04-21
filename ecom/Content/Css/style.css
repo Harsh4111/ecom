@@ -1,0 +1,29 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.gridview {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+    .gridview th, .gridview td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .gridview th {
+        background-color: #f2f2f2;
+        text-align: left;
+    }
+
+    .gridview tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .gridview tr:hover {
+        background-color: #ddd;
+    }

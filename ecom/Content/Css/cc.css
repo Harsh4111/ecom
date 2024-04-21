@@ -1,0 +1,69 @@
+﻿/* Authcs.css */
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#chat-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#chat-output {
+    min-height: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#user-input {
+    width: calc(100% - 70px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send-btn {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.msg-container {
+    margin-bottom: 10px;
+}
+
+.user-msg {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.ai-msg {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+    #user-input {
+        width: calc(100% - 60px);
+    }
+
+    #send-btn {
+        margin-left: 5px;
+    }
+}
